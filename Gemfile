@@ -76,3 +76,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "exif", "~> 2.2"
+
+gem "open-uri", "~> 0.2.0"
