@@ -22,7 +22,9 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.new(article_params)
-
+    # ex = Exif::Data.new(File.open(params[:article][:photo].tempfile)).to_json
+    p params[:article][:photo].tempfile
+    @article.body = Exif::Data.new(File.open(params[:article][:photo].tempfile)).to_h.to_s
     if @article.save
       redirect_to @article, notice: "Article was successfully created."
     else
